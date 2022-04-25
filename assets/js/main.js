@@ -1,3 +1,5 @@
+// Cadastro e Listar
+
 const formCad = document.querySelector('.form-cad');
 const formList = document.querySelector('.form-list');
 const mostrarCad = formCad.style.display = 'none';
@@ -14,3 +16,8 @@ function abrirListar() {
     formList.style.display = 'block';
     formCad.style.display = 'none';
 }
+
+//Editar e exluir
+
+
+//Funções

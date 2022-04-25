@@ -93,10 +93,12 @@ require_once('./db/config.php');
             <table>
                 <?php
                 if ($linha['periodo'] > 1) {
-                    echo '<tr>
-                    <th>Quantidade</th>
-                    <th>Produto</th>
-                </tr>';
+                    echo '
+                    <tr>
+                        <th>Quantidade</th>
+                        <th>Produto</th>
+                        <th colspan="2">Config</th>
+                    </tr>';
                 }
                 ?>
 
@@ -104,9 +106,25 @@ require_once('./db/config.php');
                 if ($total > 0) {
                     do {
                 ?>
+
                         <tr>
                             <td><?= $linha['quantidade'] ?></td>
                             <td><?= $linha['nome'] ?></td>
+                            <td>
+                                <form name="editProduto" action="./db/editar.php" method="POST">
+                                    <input type="hidden" name="produtoName" value="<?php echo $linha['nome'] ?>">
+                                    <input id="quant_edit" type="number" name="quant" min="1" max="100" value="1">
+                                    <input id="nome_edit" type="text" name="nome" value="<?php echo $linha['nome']?>" placeholder="Edite o nome do produto">
+                                    <input id="submit_edit" type="submit" name="editProduto" value="Editar">
+                                </form>
+                            </td>
+                            <td>
+                                <form name="excluirProduto" action="./db/excluir.php" method="POST">
+                                    <input type="hidden" name="produtoName" value="<?php echo $linha['nome'] ?>">
+                                    <input type="hidden" name="produtoPeriodo" value="<?php echo $linha['periodo']?>">
+                                    <input type="submit" name="excluirProduto" value="Excluir">
+                                </form>
+                            </td>
                         </tr>
                 <?php
                     } while ($linha = mysqli_fetch_assoc($dados));
@@ -119,7 +137,6 @@ require_once('./db/config.php');
         </div>
     </div>
 </body>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 <script src="./assets/js/main.js"></script>
 
 
