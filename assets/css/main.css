@@ -1,0 +1,39 @@
+:root{
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+    font-family: sans-serif;
+}
+.container{
+    width: 90%;
+    margin: auto;
+}
+.btn-ini--cad, .btn-ini--list {
+    background-color: #08f;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px;
+    text-decoration: none;
+    cursor: pointer;
+    color: #fff;
+    border: none;
+    font-size: 1.04rem;
+}
+.btn-ini--cad:hover, .btn-ini--list:hover {
+    transform: scale(1.1);
+}
+.form-cad input{
+    margin: 10px;
+}
+.form-cad input[type="text"] {
+    padding: 4px;
+}
+td, tr, th, table {
+    border: 1px solid #000;
+    border-collapse: collapse;
+    padding: 5px;
+    text-align: center;
+}
+.listagem p::first-letter{
+    text-transform: capitalize;
+}
